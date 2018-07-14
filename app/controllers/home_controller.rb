@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def proposal
   end
   
+  def img_upload
+  end
+  
+  
 end
