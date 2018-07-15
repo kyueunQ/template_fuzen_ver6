@@ -1,5 +1,5 @@
 class MainPagesController < ApplicationController
-    layout "application2"
+    layout "application_main"
     
     def index
     end
