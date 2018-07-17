@@ -273,5 +273,9 @@ header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Aria
 <br><br>
 
 
+<% content_for 'javascript_content' do %>
+    <%= javascript_include_tag params[:controller] %>
+<% end %>
+
 </body>
 </html>
