@@ -26,6 +26,8 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
+    logger.debug "New gallery: #{@gallery.attributes.inspect}"
+    logger.debug "Article should be valid: #{@gallery.valid?}"
 
     respond_to do |format|
       if @gallery.save
