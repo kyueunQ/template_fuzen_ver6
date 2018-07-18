@@ -18,4 +18,8 @@ Rails.application.config.assets.precompile += %w( home.js
                                                   main_pages.js
                                                   main_pages.scss
                                                   mypages.js
-                                                  mypages.scss)
+                                                  mypages.scss
+                                                  emojis.scss
+                                                  emojis.js
+                                                  boxes.js
+                                                  boxes.scss)

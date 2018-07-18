@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :emojis
   resources :galleries
   resources :products
+  
     get 'home/index'
 
     get '/guide' => 'home#guide'
@@ -10,11 +13,6 @@ Rails.application.routes.draw do
     
     root 'main_pages#index'
     
-  post '/galleries/state' => 'galleries#state_update'
-  post '/create_board' => 'galleries#create_board'
-  
-  get '/galleries/:id/delete' => 'galleries#destroy_img'
-  get '/galleries/:id/download' => 'galleries#download_img', as: "download_img"
   
   
   # user id

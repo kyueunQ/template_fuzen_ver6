@@ -4,6 +4,8 @@ class CreateGalleries < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :description
       
+      t.integer  :user_id
+      
       t.timestamps
     end
   end

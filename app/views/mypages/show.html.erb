@@ -123,10 +123,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-8 col-sm-12 col-lg-8">
+          
+          <!-- 작업로그 상단바 시작 -->
+          <div class="col-md-8 col-sm-8 col-lg-6">
             <div class="usr-actvty-wrp widget pad50-40">
               <h4 class="widget-title">Activity
-                <span class="green-bg badge">05 Messages</span>
               </h4>
               <div class="slct-bx">
                 <i>Added:</i>
@@ -140,213 +141,50 @@
                   </select>
                 </span>
               </div>
-              <form class="cntnt-frm brd-rd5">
-                <textarea placeholder="What's in your mind"></textarea>
-                <div class="cnt-opt">
-                  <div class="cnt-opt-lst">
-                    <span>
-                      <label class="fileContainer">
-                        <i class="fa fa-picture-o"></i>
-                        <input type="file" />
-                      </label>
-                    </span>
-                    <span>
-                      <label class="fileContainer">
-                        <i class="fa fa-microphone"></i>
-                        <input type="file" />
-                      </label>
-                    </span>
-                    <span>
-                      <label class="fileContainer">
-                        <i class="ion-upload"></i>
-                        <input type="file" />
-                      </label>
-                    </span>
-                    <span>
-                      <i class="fa fa-paper-plane"></i>
-                    </span>
-                  </div>
-                  <button class="brd-rd5 green-bg" type="submit">Post</button>
-                </div>
-              </form>
-              <div class="act-pst-lst">
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb1.jpg" alt="" />
+              
+              <!-- 작업로그 상단바 끝 -->
+          <hr>
+              <!-- 작업 로그 시작-->
+              <div class="act-pst">
+
                   <div class="act-pst-inf">
                     <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Sadi Orlaf</a>
-                      </h5> posted in
-                      <a href="#" title="">Material</a>
+                      <!--<span class="spnd-tm">5 Min Ago</span>-->
+                    <div>
+
+                      <% @job_logs.reverse.each do |log| %>
+                      <div>
+                        <p><img class="brd-rd50" src="<%= asset_path 'resource/acti-thmb1.jpg' %>" alt="job_log" >&nbsp;&nbsp;&nbsp;
+                        <% if log.from == "G" %>
+                          <%= log.thing_name %> 갤러리를 <%= log.action %>했습니다. <br>
+                          <small>(<%= log.created_at  %>)</small></p>
+                        <% elsif log.from == "E" %>
+                          <p><%= log.thing_name %> 이모티콘을 <%= log.action %>했습니다. <small><%= log.created_at %></small> </p>
+                        <% elsif log.from == "P" %>
+                          <p><%= log.thing_name %> 제안서를 <%= log.action %>했습니다. <small><%= log.created_at %></small> </p>
+                        <% end %>
+                      </div>
+                      <% end %>
+                      <!--<p><span class="act-pst-lk-stm">-->
+                      <!--   <a href="#" title=""><i class="fa fa-times-circle" aria-hidden="true"></i></a>-->
+                      <!--  </span>-->
+                      <!--<hr> </p>-->
                     </div>
-                    <span class="spnd-tm">5 Min Ago</span>
-                    <div class="act-pst-dta">
-                      <p>That's awesome!</p>
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb2.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Overtunk</a>
-                      </h5> posted in
-                      <a href="#" title="">New Blog</a>
-                    </div>
-                    <span class="spnd-tm">37 Min Ago</span>
-                    <div class="act-pst-dta">
-                      <p>That's awesome!</p>
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
+                          
+                          
+                    
+                    <!--<div class="act-pst-lk-stm">-->
+                    <!--  <a class="brd-rd5 green-bg-hover" href="#" title="">-->
+                    <!--    <i class="ion-heart"></i> Love</a>-->
+                    <!--  <a class="brd-rd5 blue-bg-hover" href="#" title="">-->
+                    <!--    <i class="ion-thumbsup"></i> Like</a>-->
                     </div>
                   </div>
                 </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb3.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Kim Smith</a>
-                      </h5> add
-                      <a href="#" title="">1 photo</a>
-                    </div>
-                    <span class="spnd-tm">50 Min Ago</span>
-                    <div class="act-pst-dta">
-                      <img src="images/resource/act-pst-img1.jpg" alt="" />
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb4.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Chris Johnathan</a>
-                      </h5> started following
-                      <h6>
-                        <a href="#" title="">Monica Smith</a>
-                      </h6> site.</div>
-                    <span class="spnd-tm">1 Hour Ago</span>
-                    <div class="act-pst-dta">
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb2.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Overtunk</a>
-                      </h5> posted in
-                      <a href="#" title="">New Blog</a>
-                    </div>
-                    <span class="spnd-tm">37 Min Ago</span>
-                    <div class="act-pst-dta">
-                      <p>That's awesome!</p>
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb3.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Kim Smith</a>
-                      </h5> add
-                      <a href="#" title="">2 photos</a>
-                    </div>
-                    <span class="spnd-tm">50 Min Ago</span>
-                    <div class="act-pst-dta">
-                      <img src="images/resource/act-pst-img1.jpg" alt="" />
-                      <img src="images/resource/act-pst-img2.jpg" alt="" />
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="act-pst">
-                  <img class="brd-rd50" src="images/resource/acti-thmb4.jpg" alt="" />
-                  <div class="act-pst-inf">
-                    <div class="act-pst-inr">
-                      <h5>
-                        <a href="#" title="">Chris Johnathan</a>
-                      </h5> started following
-                      <h6>
-                        <a href="#" title="">Monica Smith</a>
-                      </h6> site.</div>
-                    <span class="spnd-tm">1 Hour Ago</span>
-                    <div class="act-pst-dta">
-                    </div>
-                    <span class="pst-tm">
-                      <a href="#" title="">
-                        <i class="fa fa-trash-o"></i> Remove</a>
-                    </span>
-                    <div class="act-pst-lk-stm">
-                      <a class="brd-rd5 green-bg-hover" href="#" title="">
-                        <i class="ion-heart"></i> Love</a>
-                      <a class="brd-rd5 blue-bg-hover" href="#" title="">
-                        <i class="ion-thumbsup"></i> Like</a>
-                    </div>
-                  </div>
-                </div>
+                <hr>
               </div>
+              <!--작업로그 -->
+                
               <!-- Activity Post List -->
               <div class="vw-mr-act">
                 <a href="#" title="">View More Activity</a>

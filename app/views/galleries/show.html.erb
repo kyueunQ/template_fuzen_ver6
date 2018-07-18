@@ -1,4 +1,3 @@
-
   <div class="option-panel">
     <span class="panel-btn">
       <i class="fa ion-android-settings fa-spin"></i>
@@ -33,79 +32,188 @@
   <!-- Page Top -->
   <div class="panel-content">
     <div class="widget pad50-65 mb150">
-      <div class="btns-wrp">
-        <div class="btns-list">
-          <%= link_to '<i class="fa fa-plus"></i> NEW</a>'.html_safe, "/create_board", method: :post, class: "brd-rd5 btn btn-outline-success new" %>
-            
-          <a href="#" title="" class="brd-rd5 btn btn-outline-success">
-            <i class="fa fa-upload"></i> UPLOAD</a>
-        </div>
-      
       <div class="fltrs text-center">
         <ul class="fltrs-lst" data-option-key="filter">
           <li>
             <a class="selected" href="#" title="" data-option-value="*">All</a>
           </li>
           <li>
-            <a href="#" title="" data-option-value=".edit11">수정 중</a>
+            <a href="#" title="" data-option-value=".tb1">Urgent Cause</a>
           </li>
           <li>
-            <a href="#" title="" data-option-value=".finish">완성</a>
+            <a href="#" title="" data-option-value=".tb2">Senior Citizen</a>
           </li>
           <li>
-            <a href="#" title="" data-option-value=".first1">초안</a>
+            <a href="#" title="" data-option-value=".tb3">Hunger</a>
           </li>
           <li>
             <a href="#" title="" data-option-value=".tb4">Environment</a>
           </li>
         </ul>
-        
         <div class="gallery-wrp">
-          <div class="row mrg10 add-box">
-            <% @boards.each do |board| %>
-              <div class="col-md-4 col-sm-6 col-lg-4 flt-itm <%= board.state %>">
-                <% if board.state == "first1" %>
-                <div class="gallery-box border border-light" id="<%= board.id %>">
-                <% elsif board.state == "edit11" %>
-                <div class="gallery-box border border-warning" id="<%= board.id %>">
-                <% else %>
-                <div class="gallery-box border border-primary" id="<%= board.id %>">
-                <% end %>
-                  <div class="wdgt-opt">
-                            <span class="wdgt-opt-btn">
-                                <i class="ion-android-more-vertical"></i>
-                            </span>
-                            <div class="wdgt-opt-lst brd-rd5">
-                                <%=link_to "Delete", "/galleries/#{board.id}/delete", method: "delete" %>
-                                <a class="delt-wdgt" href="#" title="">Convert</a>
-                                <%=link_to "Upload", download_img_path %>
-                                
-                            </div>
-                        </div>
-                        <div class="wdgt-ldr">
-                            <div class="ball-scale-multiple">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                  </div>
-                  <img src="<%= asset_path 'resource/gallery2-2.jpg' %>" alt=""/>
-                  <div class="gallery-info">
-                    <h2>Charity Fundraise</h2>
-                    <span class="cate">
-                      <a href="#" title="">first11</a>,
-                      <a href="#" title="">tb</a>,
-                      <a href="#" title="">Nature</a>
-                    </span>
-                    <span class="lightbox">
-                      <a href="images/resource/gallery2-2.jpg" title="">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </span>
-                  </div>
+          <div class="row mrg10">
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb1 tb2">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-1.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-1.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
                 </div>
               </div>
-            <% end %>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb3 tb4">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-2.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-2.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb2 tb3">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-3.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-3.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb1 tb4">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-4.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-4.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb1 tb2">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-5.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-5.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb3 tb4">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-6.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-6.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb1 tb2">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-7.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-7.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb3 tb4">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-8.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-8.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 flt-itm tb3 tb4">
+              <div class="gallery-box">
+                <img src="images/resource/gallery2-9.jpg" alt="" />
+                <div class="gallery-info">
+                  <h2>Charity Fundraise</h2>
+                  <span class="cate">
+                    <a href="#" title="">Charity</a>,
+                    <a href="#" title="">Kids</a>,
+                    <a href="#" title="">Nature</a>
+                  </span>
+                  <span class="lightbox">
+                    <a href="images/resource/gallery2-9.jpg" title="">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -114,56 +222,3 @@
   <!-- Panel Content -->
   
   
-<% content_for 'javascript_content' do %>
-<%= javascript_include_tag params[:controller] %>
-<% end %>
-
-<script>
-$(document).on('ready',function(){
-  $(document).on('click','.gallery-box', function(){
-    var box = $(this).parent();
-    var current_id = parseInt($(this).attr('id'));
-    
-    if(box.hasClass('first1')){
-      $(this).removeClass('border border-light').addClass('border border-warning');
-      box.removeClass('first1').addClass('edit11');
-      var state = "edit11";
-      $.ajax({  
-        url: '/home/state', 
-        method: 'POST',
-        data: {
-         id: current_id,
-         state: state
-       }
-      });
-    } 
-    else if(box.hasClass('edit11')){
-      $(this).removeClass('border border-warning').addClass('border border-primary');
-      box.removeClass('edit11').addClass('finish');
-      var state = "finish";
-      $.ajax({  
-        url: '/home/state', 
-        method: 'POST',
-        data: {
-          id: current_id,
-          state: state
-        }
-      });
-    } 
-    else {
-      $(this).removeClass('border border-primary').addClass('border border-light');
-      box.removeClass('finish').addClass('first1');
-      var state = "first1";
-       $.ajax({  
-         url: '/home/state', 
-         method: 'POST',
-         data: {
-          id: current_id,
-          state: state
-         }
-      });
-    }
-  })
-})
-
-</script>
